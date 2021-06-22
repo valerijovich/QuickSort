@@ -1,18 +1,24 @@
 package com.company.valerijovich;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] array = {2,44,23,53,11,2,3,44,5,7,874,3,45,335,63};
+        int[] array = new int[20];
+        Random random = new Random();
 
-        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(999);
+        }
+
+        System.out.println("Initial array is: " + Arrays.toString(array));
 
         quickSort(array, 0, array.length - 1);
 
-        System.out.println(Arrays.toString(array));
+        System.out.println("Sorted array is: " + Arrays.toString(array));
     }
 
     private static void quickSort(int[] array, int from, int to) {
